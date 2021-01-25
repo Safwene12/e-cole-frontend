@@ -1,0 +1,169 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card card-profile">
+      <div class="card-avatar">
+      
+        <a >
+          <img class="img" src="../assets/img/profilePictures/{{user.photo}}" />
+        </a>
+
+       
+      </div>
+      <div class="card-body">
+        
+        <label class="form-label" for="customFile">Change your photo?</label>
+        <div class="row">
+          <div class="col-md-8">
+            <input type="file" class="form-control" id="customFile" (change)="onFileChanged($event)" />
+          </div>
+          <div class="col-md-4">
+            <button class="btn btn-light" (click)="onUpload()">Change</button>
+          </div>
+        </div>
+        <h6 class="card-category">Student</h6>
+        <h4 class="card-title">{{user.prenom}} {{user.nom}} </h4><hr>
+        <div class="card-description">
+          <div class="row">
+            <div class="col-md-6">
+              <h6 class="card-title"><b>Section : </b> {{user.groupe.section.nomSection}}</h6>
+            </div>
+            <div class="col-md-6">
+              <h6 class="card-title"><b>Groupe :</b>  {{user.groupe.nomGroupe}}</h6>
+            </div>   
+         </div>
+         <hr>
+         <ul class="list-group list-group-flush">
+          
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-md-6">
+                  <h6 class="card-title">
+                  Current adress : {{user.adresseActuelle}}
+                  </h6>            
+              </div>
+              <div class="col-md-6">
+                <h6 class="card-title">Family adress : {{user.adresseOrigine}}</h6>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-md-6">
+                  <h6 class="card-title">
+                    Username : {{user.username}}
+                  </h6>            
+              </div>
+              <div class="col-md-6">
+                <h6 class="card-title">Matricule : {{user.matricule}}</h6>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item"><h6 class="card-title">E-mail : {{user.email}}</h6></li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-md-6">
+                  <h6 class="card-title">
+                    Phone : {{user.numTel}}
+                  </h6>            
+              </div>
+              <div class="col-md-6">
+                <h6 class="card-title">CIN : {{user.cin}}</h6>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-md-6">
+                  <h6 class="card-title">
+                    Date of birth : {{user.dateDeNaissance}}
+                  </h6>            
+              </div>
+              <div class="col-md-6">
+                <h6 class="card-title">Place of birth : {{user.lieuDeNaissance}}</h6>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item"><h6 class="card-title">Sexe : {{user.sexe}}</h6></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="col-md-6" >
+      <div class="card">
+        <div class="card-header card-header-primary">
+          <h4 class="card-title">Edit Profile</h4>
+          <p class="card-category">Complete your profile</p>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="submit()">
+         
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Fist Name</label>
+                  <input type="text" class="form-control"  [(ngModel)]="etudiant.prenom" value ={{user.prenom}} name="prenom" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Last Name</label>
+                  <input type="text" class="form-control" value ={{user.nom}} [(ngModel)]="etudiant.nom" name="nom" required>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Current address</label>
+                  <input type="text" class="form-control" value ={{user.adresseActuelle}} [(ngModel)]="etudiant.adresseActuelle" name="adresseActuelle" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Familly adress</label>
+                  <input type="text" class="form-control" value ={{user.adresseOrigine}}  [(ngModel)]="etudiant.adresseOrigine" name="adresseOrigine" required>
+                </div>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label class="bmd-label-floating">e-mail</label>
+                  <input type="email" class="form-control" value ={{user.email}} [(ngModel)]="etudiant.email" name="email" required>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group" >
+                  <label class="bmd-label-floating">Phone</label>
+                  <input  type="text" class="form-control" value ={{user.numTel}} [(ngModel)]="etudiant.numTel" name="numTel" required>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Date of birth</label>
+                  <input type="text" class="form-control" value ={{user.dateDeNaissance}} [(ngModel)]="etudiant.dateDeNaissance" name="dateDeNaissance" required>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Place of birth</label>
+                  <input type="text" class="form-control" value ={{user.lieuDeNaissance}} [(ngModel)]="etudiant.lieuDeNaissance" name="lieuDeNaissance" required>
+                </div>
+              </div>
+            </div>
+          
+          
+           
+          
+            <button  type="submit" class="btn btn-primary pull-right">Edit</button>
+            <div class="clearfix"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+    

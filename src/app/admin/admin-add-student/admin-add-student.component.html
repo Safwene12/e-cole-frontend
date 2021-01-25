@@ -1,0 +1,142 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">Add Student</h4>
+            <p class="card-category">Here you can add a new Student!</p>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="submit()">
+         
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Fist Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="etudiant.prenom"  name="prenom" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Last Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="etudiant.nom" name="nom" required>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Current address</label>
+                    <input type="text" class="form-control" [(ngModel)]="etudiant.adresseActuelle" name="adresseActuelle" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Familly adress</label>
+                    <input type="text" class="form-control" [(ngModel)]="etudiant.adresseOrigine" name="adresseOrigine" required>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Username</label>
+                    <input type="text" class="form-control" [(ngModel)]="etudiant.username" name="username" required>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Password</label>
+                    <input type="password" class="form-control" [(ngModel)]="etudiant.password" name="password" required>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Matricule</label>
+                      <input type="text" class="form-control" [(ngModel)]="etudiant.matricule" name="matricule" required>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">e-mail</label>
+                    <input type="email" class="form-control" [(ngModel)]="etudiant.email" name="email" required>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Phone</label>
+                    <input type="text" class="form-control" [(ngModel)]="etudiant.numTel" name="numTel" required>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Date of birth</label>
+                    <input type="date" class="form-control" [(ngModel)]="etudiant.dateDeNaissance" name="dateDeNaissance" required>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Place of birth</label>
+                    <input type="text" class="form-control" [(ngModel)]="etudiant.lieuDeNaissance" name="lieuDeNaissance" required>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">CIN</label>
+                    <input type="text" class="form-control" [(ngModel)]="etudiant.cin" name="cin" required>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Sexe</label>
+                    <select class="form-control" id="sexe" [(ngModel)]="etudiant.sexe" name="sexe" required>
+                      <option value="homme">Man</option>
+                      <option value="femme">Women</option>
+                  
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Photo</label>
+                    <input type="file" [(ngModel)]="etudiant.photo" name="photo"  >
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="bmd-label-floating">Section</label>  
+                        <select class="form-select" (change)="generateGroup($event)">
+                            <option selected disabled>----Select A Section----</option>
+                            <option *ngFor="let sec of sections" value="{{sec.id}}">{{ sec.niveau }} {{ sec.nomSection }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-5" *ngIf="groupes">
+                    <label class="bmd-label-floating">Groupe</label> 
+                    <p *ngIf="size == 0" >There Is no Groups in this Section<br><b>You have to Add groups before Students</b> </p>
+                    <select *ngIf="size != 0" class="form-select"  [(ngModel)]="groupe.id" name="id" >
+                        <option selected disabled>----Select A Groupe----</option>
+                        <option *ngFor="let g of groupes" value="{{g.id}}">{{ g.nomGroupe }} || {{ g.anneeScollaire }}</option>
+                    </select>
+                    
+                </div>
+              </div>
+            
+              <button *ngIf="size != 0" type="submit" class="btn btn-primary pull-right">Add</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>

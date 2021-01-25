@@ -1,0 +1,74 @@
+.messages {
+    padding: 0;
+    list-style: none;
+}
+.message {
+    position: relative;
+    padding: 1rem 1rem 1rem 2rem;
+    cursor: pointer;
+    border-bottom: 1px solid #e1e6ef;
+}
+.message:hover {
+    background: #f9f9fa;
+}
+.message .actions {
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+.message .actions .action {
+    width: 2rem;
+    margin-bottom: 0.5rem;
+    color: #c0cadd;
+    text-align: center;
+}
+.message .title {
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.message .description {
+    font-size: 12px;
+}
+.message .header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5rem;
+}
+.message .header .date {
+        margin-left: auto;
+    }
+    .message .toolbar {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #e1e6ef;
+    }
+    .message .details .title {
+        padding: 1rem 0;
+        font-weight: bold;
+    }
+    .message .details .header {
+        display: flex;
+        padding: 1rem 0;
+        margin: 1rem 0;
+        border-top: 1px solid #e1e6ef;
+        border-bottom: 1px solid #e1e6ef;
+    }
+    .tr{
+        font-weight: bold;
+    }
+    .message .details .header .avatar {
+        width: 40px;
+        height: 40px;
+        margin-right: 1rem;
+    }
+    .message.unread .header{
+        font-weight: bold;
+    }
+    .message.unread .description{
+        font-weight: bold;
+    }
+    .message.unread .title{
+        font-weight: bold;
+    }

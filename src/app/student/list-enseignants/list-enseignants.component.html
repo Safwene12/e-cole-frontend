@@ -1,0 +1,58 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title ">Your Teachers</h4>
+            <p class="card-category"> Here is a find all your teachers</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  
+                  <th>
+                    Name
+                  </th>
+                  <th>
+                    Phone
+                  </th>
+                  <th>
+                    E-mail
+                  </th>
+                  <th>
+                    Matiere 
+                  </th>
+                  <th>
+
+                  </th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let a of affects">
+                   
+                    <td>
+                      {{a.enseignant.prenom}} {{a.enseignant.nom}}
+                    </td>
+                    <td>
+                      {{a.enseignant.numTel}}
+                    </td>
+                    <td>
+                      {{a.enseignant.email}}
+                    </td>
+                    <td class="text-primary">
+                      {{a.matiere.codeMatiere}}
+                    </td>
+                    <td><button [routerLink]="['/student/messagerie/contact', a.enseignant.id]" class="btn btn-light"><i class="material-icons">forward_to_inbox</i></button></td>
+                  </tr>
+                     
+                  
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </div>

@@ -1,0 +1,25 @@
+<div class="container bootdey">
+<div class="email-app mb-4">
+    <nav>
+        <a routerLink="newE-mail" class="btn btn-primary btn-block">New Email</a>
+        <ul class="nav">
+            <li class="nav-items">
+                <a class="nav-link" routerLink="inbox"><i class="fa fa-inbox"></i> Inbox <span class="badge badge-secondary">{{span}}</span></a>
+            </li>
+            
+            <li class="nav-items">
+                <a class="nav-link" routerLink="sent"><i class="fa fa-rocket"></i> Sent</a>
+            </li>
+            <li class="nav-items">
+                <a class="nav-link" href="#"><i class="fa fa-trash-o"></i> Trash</a>
+            </li>
+           
+        </ul>
+    </nav>
+    <main class="inbox">
+        
+
+        <router-outlet></router-outlet>
+    </main>
+</div>
+</div>

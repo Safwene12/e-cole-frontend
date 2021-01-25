@@ -1,0 +1,57 @@
+<div class="sidebar" data-color="purple" [style.background-image]="'url(./assets/img/sidebar-1.jpg)'" >
+    <!--
+    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+    Tip 2: you can also add an image using data-image tag
+-->
+    <div class="logo">
+      <a routerLink="home" class="simple-text logo-normal">
+        E-Polytech Student
+      </a>
+    </div>
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="nav-item active  ">
+          <a class="nav-link" routerLink="home">
+            <i class="material-icons">dashboard</i>
+            <p>Dashboard</p>
+          </a>
+        </li>
+        
+        <!-- your sidebar here -->
+      </ul>
+      <ul class="nav">
+        <li class="nav-item active  ">
+          <a class="nav-link" routerLink="messagerie">
+            <i class="material-icons">messages</i>
+
+            <p *ngIf="span!=0">Messagerie  <span class="badge badge-secondary">{{span}}</span></p>
+            <p *ngIf="span==0">Messagerie  </p>
+          </a>
+        </li>
+        
+        <!-- your sidebar here -->
+      </ul>
+      <ul class="nav">
+        <li class="nav-item active  ">
+          <a class="nav-link" routerLink="enseignants">
+            <i class="material-icons">group</i>
+            <p>Your Teachers</p>
+          </a>
+        </li>
+        
+        <!-- your sidebar here -->
+      </ul>
+      <ul class="nav">
+        <li class="nav-item active  ">
+          <a class="nav-link" routerLink="collegues">
+            <i class="material-icons">group</i>
+            <p>Your classmates</p>
+          </a>
+        </li>
+        
+        <!-- your sidebar here -->
+      </ul>
+      
+    </div>
+</div>

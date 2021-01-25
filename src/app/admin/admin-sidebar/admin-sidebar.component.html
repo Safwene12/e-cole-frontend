@@ -1,0 +1,61 @@
+<div class="sidebar" data-color="purple" [style.background-image]="'url(./assets/img/sidebar-1.jpg)'" >
+    <!--
+    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+    Tip 2: you can also add an image using data-image tag
+-->
+    <div class="logo">
+      <a routerLink="home" class="simple-text logo-normal">
+        E-Polytech Admin
+      </a>
+    </div>
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="nav-item active  ">
+          <a class="nav-link" routerLink="home">
+            <i class="material-icons">dashboard</i>
+            <p>Dashboard</p>
+          </a>
+        </li>
+        <li class="nav-item active  ">
+          <a class="nav-link" (click)="openDialogSpecialite()">
+            <i class="material-icons">library_add</i>
+            <p>New Specialty</p>
+          </a>
+        </li>
+        <li class="nav-item active  ">
+          <a class="nav-link" (click)="openDialogSubject()">
+            <i class="material-icons">post_add</i>
+            <p>New Subject</p>
+          </a>
+        </li>
+        <li class="nav-item active  ">
+          <a class="nav-link" (click)="openDialogSection()">
+            <i class="material-icons">library_add</i>
+            <p>New Section</p>
+          </a>
+        </li>
+        <li class="nav-item active  ">
+          <a class="nav-link" (click)="openDialogGroupe()">
+            <i class="material-icons">group_add</i>
+            <p>New Group</p>
+          </a>
+        </li>
+        <li class="nav-item active  ">
+          <a class="nav-link" routerLink="addTeacher">
+            <i class="material-icons">person_add</i>
+            <p>New Teacher</p>
+          </a>
+        </li>
+        <li class="nav-item active  ">
+          <a class="nav-link" routerLink="addStudent">
+            <i class="material-icons">person_add</i>
+            <p>New Student</p>
+          </a>
+        </li>
+        
+        <!-- your sidebar here -->
+      </ul>
+      
+    </div>
+</div>

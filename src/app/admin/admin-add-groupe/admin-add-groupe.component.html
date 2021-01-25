@@ -1,0 +1,83 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">New Group</h4>
+            <p class="card-category">Here you can add a new Group</p>
+          </div>
+          <div class="card-body">
+            <mat-horizontal-stepper [linear]="isLinear" #stepper>
+              <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                  <ng-template matStepLabel>Group Details</ng-template>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <mat-form-field>
+                        <mat-label>Group name</mat-label>
+                        <input  matInput placeholder="Name" formControlName="nomGroupe" [(ngModel)]="groupe.nomGroupe" name="nomGroupe" required>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md-6">                  
+                      <mat-form-field>
+                        <mat-label>School year</mat-label>
+                        <textarea matInput placeholder="YYYY/YYYY" formControlName="anneeScollaire" [(ngModel)]="groupe.anneeScollaire" name="anneeScollaire" >
+                        </textarea>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class ="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Section</label>
+                          <select class="form-select" formControlName="section" [(ngModel)]="groupe.sectionId" name="section" required>
+                            <option *ngFor="let sec of sections" value="{{sec.id}}">{{ sec.niveau }} {{ sec.nomSection }}</option>
+                          </select>
+                        </div>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="btn btn-primary pull-right" (click)="mats()" matStepperNext>Next</button>
+                  </div>
+                </form>
+              </mat-step>
+              <mat-step [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                  <ng-template matStepLabel>Assign subjects</ng-template>
+                    <div *ngIf="!matieres">
+                      <div class="row">
+                        <div class="col-md-12"> 
+                          <a><b>No Subject is Assigned to this Section</b><br> Go back and assigns all subject</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row" *ngFor="let m of matieres; let num = index">
+                      <div class="col-md-6">
+                        <a >{{ m.codeMatiere }}</a> 
+                      </div>
+                      <div class="col-md-6">
+                        <select class="form-select"  (change)="addToEnseigs($event, num)"    required>
+                          <option selected >Select a teacher</option>
+                          <option *ngFor="let e of enseignants" value="{{e.id}}">{{ e.nom }} {{ e.prenom }}</option>
+                        </select>
+                      </div>
+                      
+  
+                    </div>
+  
+                  
+                  <br/>
+                  <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button (click)="stepper.reset()">Reset</button>
+                    <button *ngIf="matieres" class="btn btn-primary pull-right" mat-button mat-dialog-close (click)="submit()">Submit</button>
+                  </div>
+                </form>
+              </mat-step>
+              
+            </mat-horizontal-stepper>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

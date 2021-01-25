@@ -1,0 +1,154 @@
+<!--<div class="toolbar">
+    <div class="btn-group">
+        <button type="button" class="btn btn-light">
+            <span class="fa fa-envelope"></span>
+        </button>
+       
+    </div>
+    
+    <button type="button" class="btn btn-light">
+        <span class="fa fa-trash-o"></span>
+    </button>
+ 
+    <div class="btn-group float-right">
+        <button type="button" class="btn btn-light">
+            <span class="fa fa-chevron-left"></span>
+        </button>
+        <button type="button" class="btn btn-light">
+            <span class="fa fa-chevron-right"></span>
+        </button>
+    </div>
+</div>
+<!--<ul class="messages">
+    <div *ngIf="inbox.length==0">
+        No Messages For Now!
+    </div>
+    <div *ngFor="let m of inbox">
+        <li class="message unread" *ngIf="!m.vu">
+            <a [routerLink]="['/student/messagerie/read-mail', m.id]">
+                <div class="actions">
+                    <span class="action"><i class="fa fa-square-o"></i></span>
+                    <span class="action"><i class="fa fa-star-o"></i></span>
+                </div>
+                <div class="header">
+                    <span class="from">{{m.userEnv.username}}</span>
+                    <span class="date">
+                    <span class="fa fa-paper-clip"></span> {{((m.date.toString()).split("T")[0]).split("-")[2]}}/{{((m.date.toString()).split("T")[0]).split("-")[1]}},{{(((m.date.toString()).split("T")[1])).split(":")[0]}}:{{(((m.date.toString()).split("T")[1])).split(":")[1]}}</span>
+                </div>
+                <div class="title">
+                    {{m.objet}}.
+                </div>
+                <div class="description">
+                    {{m.message | slice:0:120}}...
+                </div>
+            </a>
+        </li>
+        <li class="message" *ngIf="m.vu">
+            <a [routerLink]="['/student/messagerie/read-mail', m.id]">
+                <div class="actions">
+                    <span class="action"><i class="fa fa-square-o"></i></span>
+                    <span class="action"><i class="fa fa-star-o"></i></span>
+                </div>
+                <div class="header">
+                    <span class="from">{{m.userEnv.username}}</span>
+                    <span class="date">
+                    <span class="fa fa-paper-clip"></span>  {{((m.date.toString()).split("T")[0]).split("-")[2]}}/{{((m.date.toString()).split("T")[0]).split("-")[1]}},{{(((m.date.toString()).split("T")[1])).split(":")[0]}}:{{(((m.date.toString()).split("T")[1])).split(":")[1]}}</span>
+                </div>
+                <div class="title">
+                    {{m.objet}}.
+                </div>
+                <div class="description">
+                    {{m.message | slice:0:120}}...
+                </div>
+            </a>
+        </li>
+    </div>
+</ul>-->
+<div class="toolbar">
+    <div class="btn-group">
+        <button type="button" class="btn btn-light">
+            <span class="fa fa-envelope"></span>
+        </button>
+       
+    </div>
+    
+    <button type="button" class="btn btn-light">
+        <span class="fa fa-trash-o"></span>
+    </button>
+ 
+    <div class="btn-group float-right">
+        <button type="button" class="btn btn-light">
+            <span class="fa fa-chevron-left"></span>
+        </button>
+        <button type="button" class="btn btn-light">
+            <span class="fa fa-chevron-right"></span>
+        </button>
+    </div>
+
+
+ 
+        <div class="col-md-12 col-lg-12">
+           
+               
+                <div class="tab-content" id="myTabContent">
+                        
+                            
+                            <div class="table-responsive">
+                                <table class="table email-table no-wrap table-hover v-middle mb-0 font-14">
+                                    <tbody>
+                                        <div *ngIf="inbox.length==0">
+                                            No Messages For Now!
+                                        </div>
+                                       
+                                        <tr  *ngFor="let m of inbox" [routerLink]="['/student/messagerie/read-mail', m.id]" >
+                                            <!-- label -->
+                                            <td *ngIf="!m.vu" class="tr pl-3">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="cst7" />
+                                                    <label class="custom-control-label" for="cst7">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td *ngIf="m.vu" class="pl-3">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="cst7" />
+                                                    <label class="custom-control-label" for="cst7">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <!-- star -->
+                                            
+                                            <!-- User -->
+                                            <td class="tr" *ngIf="!m.vu">
+                                                <span class="tr mb-0 text-muted font-light">{{m.userEnv.username}}</span>
+                                            </td>
+                                            <td  *ngIf="m.vu">
+                                                <span class="mb-0 text-muted font-light">{{m.userEnv.username}}</span>
+                                            </td>
+                                            <!-- Message -->
+                                            <td class="tr text-muted font-light" *ngIf="!m.vu">
+                                                   <b> {{m.objet}}</b>- {{m.message| slice:0:45}}...
+                                            </td>
+                                            <td class="text-muted font-light" *ngIf="m.vu">
+                                                <b> {{m.objet}}</b>- {{m.message| slice:0:45}}...
+                                             </td>
+                  
+                                            <!-- Attachment -->
+                                            <td><i class="fa fa-paperclip text-muted"></i></td>
+                                            <!-- Time -->
+                                            <td *ngIf="!m.vu" class="tr text-muted font-light">{{((m.date.toString()).split("T")[0]).split("-")[2]}}/{{((m.date.toString()).split("T")[0]).split("-")[1]}},{{(((m.date.toString()).split("T")[1])).split(":")[0]}}:{{(((m.date.toString()).split("T")[1])).split(":")[1]}}</td>
+                                            <td *ngIf="m.vu" class="text-muted font-light">{{((m.date.toString()).split("T")[0]).split("-")[2]}}/{{((m.date.toString()).split("T")[0]).split("-")[1]}},{{(((m.date.toString()).split("T")[1])).split(":")[0]}}:{{(((m.date.toString()).split("T")[1])).split(":")[1]}}</td>
+
+                                     </tr>
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                        
+                    
+                   
+                
+                 
+                </div>
+           
+        </div>
+    
+    </div>

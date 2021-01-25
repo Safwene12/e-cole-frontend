@@ -1,0 +1,60 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="assets/img/img-01.png" alt="IMG">
+            </div>
+
+            <form class="login100-form validate-form"  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <span class="login100-form-title">
+                    Welcome To E-Polytech
+                </span>
+
+                <div class="wrap-input100 validate-input">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input class="input100" type="text"  formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Username">
+                    
+                        
+               
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input class="input100" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password">
+                    
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                
+                <div class="container-login100-form-btn">
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Login
+                    </button>
+                    <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                </div>
+
+            <div class="text-center p-t-12">
+                    <span class="txt1">
+                        Forgot
+                    </span>
+                    <a class="txt2" href="#">
+                        Username / Password?
+                    </a>
+                </div>
+
+            
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

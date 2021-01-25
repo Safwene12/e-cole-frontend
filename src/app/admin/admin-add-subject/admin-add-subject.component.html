@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">New Subject</h4>
+            <p class="card-category">Here you can add a new Subject</p>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="submit()">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Matiere</label>
+                    <input type="text" class="form-control" [(ngModel)]="matiere.codeMatiere" name="codeMatiere">
+                  </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Description</label>
+                      <input type="text" class="form-control" [(ngModel)]="matiere.description" name="description">
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                      <label class="bmd-label-floating">Number of hours(Cours)</label>
+                      <input type="text" class="form-control" [(ngModel)]="matiere.nbreHeureCours" name="nbreHeureCours">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="bmd-label-floating">Number of hours(TD)</label>
+                        <input type="text" class="form-control" [(ngModel)]="matiere.nbreHeureTd" name="nbreHeureTd">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="bmd-label-floating">Number of hours(TP)</label>
+                        <input type="text" class="form-control" [(ngModel)]="matiere.nbreHeureTp" name="nbreHeureTp">
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                      <label class="bmd-label-floating">Coefficient</label>
+                      <input type="text" class="form-control" [(ngModel)]="matiere.coef" name="coef">
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Section</label>
+                    <select class="form-select" aria-label="Default select example" [(ngModel)]="matiere.section" name="section">
+                      <option *ngFor="let sec of sections" value="{{sec.id}}">{{ sec.niveau }} {{ sec.nomSection }}</option>
+                    </select>
+                   </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary pull-right" mat-dialog-close>
+                Add
+                <i class="material-icons">note_add</i>
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>

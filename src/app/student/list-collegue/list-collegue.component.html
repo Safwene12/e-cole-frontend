@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title ">Your Classmates</h4>
+            <p class="card-category"> Here you can find all your classmates</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>
+                    Name
+                  </th>
+                  <th>
+                    Phone
+                  </th>
+                  <th>
+                    E-mail
+                  </th>
+                  <th>
+                  
+                  </th>
+                </thead>
+                <tbody>
+                  <p *ngIf="etudiant.length==0">Yet! You don't have any classmate</p>
+                 
+                    <tr *ngFor="let e of etudiant">
+                      
+                      <td *ngIf="e.id != idUser" >
+                        {{e.prenom}} {{e.nom}}
+                      </td>
+                      <td *ngIf="e.id != idUser">
+                        {{e.numTel}}
+                      </td>
+                      <td *ngIf="e.id != idUser">
+                        {{e.email}}
+                      </td>
+                      <td *ngIf="e.id != idUser">
+                        <button class="btn btn-light" [routerLink]="['/student/messagerie/contact', e.id]">Contact</button>
+                      </td>
+                    </tr>
+                     
+                  
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </div>
