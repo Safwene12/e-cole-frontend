@@ -32,8 +32,11 @@ ngOnInit(): void {
 
 this.data.currentMessage.subscribe(message => 
 (this.alerte= message)); //<= Always get current value!
-this.enseignantService.getNbreEnsei().subscribe(data=> this.nbreEnseignants=data);
-this.etudiantService.getNbreEtudiants().subscribe(data=> this.nbreEtudiants=data);
+this.enseignantService.getNbreEnsei().subscribe(data=> {this.nbreEnseignants=data
+                                                        console.log(this.nbreEnseignants)} );
+this.etudiantService.getNbreEtudiants().subscribe(data=> {
+                                                  this.nbreEtudiants=data;
+                                                  console.log(this.nbreEtudiants)});
 this.groupeService.getNbreGroupes().subscribe(data=> this.nbreGroupe=data);
 this.specService.getNbreSpec().subscribe(data=> this.nbreSpecialite=data);
 this.enseignantService.getAll().subscribe(data=> this.enseignants=data);
