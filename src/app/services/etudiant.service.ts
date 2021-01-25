@@ -2,6 +2,7 @@ import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { baseURL } from '../shared/baseURL';
+import { EtudChart } from '../shared/etudChart';
 import { Etudiant } from '../shared/student';
 
 @Injectable({
@@ -28,5 +29,8 @@ export class EtudiantService {
       responseType: 'json'
     });
     return this.http.request(req);
+  }
+  getInfoChart() : Observable<EtudChart[]>{
+    return this.http.get<EtudChart[]>(baseURL+"etudiantChart");
   }
 }

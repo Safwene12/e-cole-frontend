@@ -38,7 +38,8 @@
                         {{e.email}}
                       </td>
                       <td *ngIf="e.id != idUser">
-                        <button class="btn btn-light" [routerLink]="['/student/messagerie/contact', e.id]">Contact</button>
+                        <a [routerLink]="['/student/profil', e.id]"><i class="material-icons">face</i></a>&nbsp;&nbsp;
+                        <a [routerLink]="['/student/messagerie/contact', e.id]"><i class="material-icons">mail</i></a>
                       </td>
                     </tr>
                      

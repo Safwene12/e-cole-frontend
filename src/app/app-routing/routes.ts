@@ -2,6 +2,7 @@ import { Routes } from "@angular/router";
 import { AdminAddSectionComponent } from "../admin/admin-add-section/admin-add-section.component";
 import { AdminAddStudentComponent } from "../admin/admin-add-student/admin-add-student.component";
 import { AdminAddTeacherComponent } from "../admin/admin-add-teacher/admin-add-teacher.component";
+import { AdminChartsComponent } from "../admin/admin-charts/admin-charts.component";
 import { AdminFooterComponent } from "../admin/admin-footer/admin-footer.component";
 import { AdminHeaderComponent } from "../admin/admin-header/admin-header.component";
 import { AdminHomeComponent } from "../admin/admin-home/admin-home.component";
@@ -17,6 +18,7 @@ import { StudentHomeComponent } from "../student/student-home/student-home.compo
 import { StudentInboxComponent } from "../student/student-inbox/student-inbox.component";
 import { StudentMessagerieComponent } from "../student/student-messagerie/student-messagerie.component";
 import { StudentNewEmailComponent } from "../student/student-new-email/student-new-email.component";
+import { StudentProfilsComponent } from "../student/student-profils/student-profils.component";
 import { StudentSentMessagesComponent } from "../student/student-sent-messages/student-sent-messages.component";
 import { StudentComponent } from "../student/student.component";
 
@@ -27,6 +29,7 @@ export const routes: Routes = [
         { path: 'addStudent',  component: AdminAddStudentComponent },
         { path: 'addTeacher',  component: AdminAddTeacherComponent },
         { path: 'addSection',  component: AdminAddSectionComponent },
+        { path: 'charts',  component: AdminChartsComponent },
         { path: '', redirectTo: 'home', pathMatch: 'full' }
     ]},
     {path : 'student' , component: StudentComponent , children : [
@@ -34,6 +37,7 @@ export const routes: Routes = [
         { path: 'edit-profil',  component: EditProfilComponent },
         { path: 'enseignants',  component: ListEnseignantsComponent },
         { path: 'collegues',  component: ListCollegueComponent },
+        { path: 'profil/:id', component: StudentProfilsComponent },
         { path: 'messagerie',  component: StudentMessagerieComponent , children : [
             {path: 'inbox',  component: StudentInboxComponent},
             {path: 'sent',  component: StudentSentMessagesComponent},

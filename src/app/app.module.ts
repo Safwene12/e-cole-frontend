@@ -46,6 +46,8 @@ import { ReadEmailComponent } from './student/read-email/read-email.component';
 import { ListEnseignantsComponent } from './student/list-enseignants/list-enseignants.component';
 import { ListCollegueComponent } from './student/list-collegue/list-collegue.component';
 import { ContactComponent } from './student/contact/contact.component';
+import { AdminChartsComponent } from './admin/admin-charts/admin-charts.component';
+import { StudentProfilsComponent } from './student/student-profils/student-profils.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +78,8 @@ import { ContactComponent } from './student/contact/contact.component';
     ListEnseignantsComponent,
     ListCollegueComponent,
     ContactComponent,
+    AdminChartsComponent,
+    StudentProfilsComponent,
     
   ],
   imports: [
