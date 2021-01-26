@@ -58,12 +58,14 @@ export class LoginComponent implements OnInit {
                    {
                      this.router.navigateByUrl('/admin');
                      console.log(this.authenticationService.currentUserValue.authorities[0]);
+                    
                      
                   
                    }
                    if(this.authenticationService.currentUserValue.authorities[0]=='ROLE_ETUDIANT')
                    {
                      this.router.navigateByUrl('/student');
+                    
                     
                      
                    }

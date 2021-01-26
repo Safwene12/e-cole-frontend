@@ -13,6 +13,8 @@ import { ContactComponent } from "../student/contact/contact.component";
 import { EditProfilComponent } from "../student/edit-profil/edit-profil.component";
 import { ListCollegueComponent } from "../student/list-collegue/list-collegue.component";
 import { ListEnseignantsComponent } from "../student/list-enseignants/list-enseignants.component";
+import { MindShareComponent } from "../student/mind-share/mind-share.component";
+import { OnePostComponent } from "../Student/one-post/one-post.component";
 import { ReadEmailComponent } from "../student/read-email/read-email.component";
 import { StudentHomeComponent } from "../student/student-home/student-home.component";
 import { StudentInboxComponent } from "../student/student-inbox/student-inbox.component";
@@ -37,7 +39,9 @@ export const routes: Routes = [
         { path: 'edit-profil',  component: EditProfilComponent },
         { path: 'enseignants',  component: ListEnseignantsComponent },
         { path: 'collegues',  component: ListCollegueComponent },
+        { path : 'mindShare' , component : MindShareComponent},
         { path: 'profil/:id', component: StudentProfilsComponent },
+        { path: 'post/:id', component: OnePostComponent },
         { path: 'messagerie',  component: StudentMessagerieComponent , children : [
             {path: 'inbox',  component: StudentInboxComponent},
             {path: 'sent',  component: StudentSentMessagesComponent},

@@ -48,6 +48,8 @@ import { ListCollegueComponent } from './student/list-collegue/list-collegue.com
 import { ContactComponent } from './student/contact/contact.component';
 import { AdminChartsComponent } from './admin/admin-charts/admin-charts.component';
 import { StudentProfilsComponent } from './student/student-profils/student-profils.component';
+import { MindShareComponent } from './student/mind-share/mind-share.component';
+import { OnePostComponent } from './Student/one-post/one-post.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +82,8 @@ import { StudentProfilsComponent } from './student/student-profils/student-profi
     ContactComponent,
     AdminChartsComponent,
     StudentProfilsComponent,
+    MindShareComponent,
+    OnePostComponent,
     
   ],
   imports: [

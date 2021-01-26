@@ -21,4 +21,7 @@ export class UserService {
   getAllUser() : Observable<User[]>{
     return this.http.get<User[]>(baseURL+'users');
   }
+  getRoleById(id : number) : Observable<string>{
+    return this.http.get<string>(baseURL+'roleByUser/'+id);
+  }
 }

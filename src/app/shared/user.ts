@@ -1,3 +1,6 @@
+import { Groupe } from "./groupe";
+import { Role } from "./role";
+
 export class User {
     id : number;
     username : string;
@@ -10,10 +13,11 @@ export class User {
 	lieuDeNaissance : string;
 	adresseActuelle : string;
 	adresseOrigine : string;
-	
+	roles: Role[];
 	sexe : string;
 	cin : number;
 	photo : string;
 	accessToken?: string;
 	authorities : string[] ;
+	groupe : Groupe;
 }
