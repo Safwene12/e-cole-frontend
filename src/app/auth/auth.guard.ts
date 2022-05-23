@@ -16,7 +16,6 @@ export class AuthGuard implements CanActivate {
         const currentUser = this.authenticationService.currentUserValue;
         if (currentUser) {
             this.url = route.url.join('');
-            console.log(this.url+"L3asba");
             return true;
         }
 
